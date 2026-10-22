@@ -1,0 +1,60 @@
+trading-agents-workflow
+Copyright 2026 chenquding-code
+
+This product is a derivative work of TradingAgents
+(https://github.com/TauricResearch/TradingAgents),
+Copyright Tauric Research, licensed under the Apache License, Version 2.0.
+
+Pursuant to Section 4(b) of the Apache License 2.0, the following files contain
+modifications from the original work:
+
+  SKILL.md
+      Rewritten. The original project ships a Python/LangGraph implementation;
+      this file is a natural-language re-specification of the same agent graph
+      for execution inside a single-model agent runtime.
+
+  references/roles.md
+      Rewritten from the original agent prompt modules under
+      tradingagents/agents/ (analysts, researchers, risk_mgmt, trader,
+      managers). Changes:
+        - Technical/market analyst demoted from a peer analyst to an execution
+          appendix; all directional calls removed from its mandate.
+        - Fundamental analyst gains a "deviation vs consensus/guidance" section.
+        - Sentiment analyst now must deliver hard sell-side consensus numbers.
+        - Research manager and portfolio manager must respond to the
+          implied-expectations file (pricing.md) and name the specific
+          consensus assumption they disagree with.
+        - Data sources changed from yfinance / SEC EDGAR / FRED / StockTwits /
+          Reddit to public retrieval plus official filings; China A-share and
+          Hong Kong sentiment sources changed to Xueqiu / Guba / Eastmoney.
+
+  references/report-template.md
+  references/data-checklist.md
+  references/memory-protocol.md
+      New files. The original project has no report template, no data checklist
+      and no written memory protocol.
+
+  scripts/init_run.py
+  scripts/build_report.py
+  scripts/implied.py
+      New files. Zero-dependency Python standard library only. The original
+      project's reporting and reflection logic lives inside its Python package
+      and is not reused here.
+
+  examples/
+      New. Output produced by this workflow on CRWD as of 2026-10-22, included
+      to document the expected report shape.
+
+The following mechanisms are adapted from the original work:
+
+  - The four-analyst / bull-bear debate / research manager / trader /
+    three-way risk debate / portfolio manager topology, as implemented in
+    tradingagents/graph/setup.py.
+  - Debate turn routing, as implemented in
+    tradingagents/graph/conditional_logic.py.
+  - The five-tier rating vocabulary (Buy / Overweight / Hold / Underweight /
+    Sell) and its regex parsing, as implemented in tradingagents/agents/rating.py.
+  - Decision logging, N-trading-day settlement and lesson write-back, adapted
+    from tradingagents/memory/reflection.py.
+
+The original work's LICENSE text is reproduced verbatim in LICENSE.

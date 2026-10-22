@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Run artifacts produced by the workflow (keep only committed examples)
+runs/
+*.html.tmp
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Local config
+.env
+.env.*
