@@ -13,6 +13,8 @@
 
 这是一个 [WorkBuddy](https://www.workbuddy.cn) / Claude Skill，也能当纯提示词工程参考读。
 
+本仓库还收了第二个 skill：[`dolphin-research/`](dolphin-research/)。它是从海豚投研 2026 年全部中文原文里提炼的财报、个股、行业三套研究方法论（3419 条方法，280 张公司/行业卡片），配一个按编号检索的脚本。可以单独用，也可以给本工作流的各阶段供方法，见 [dolphin-research/README.md](dolphin-research/README.md)。
+
 ---
 
 ## 它和原版的区别
@@ -96,6 +98,12 @@ git clone https://github.com/chenquding-code/trading-agents-workflow.git \
 WorkBuddy 会自动发现 `SKILL.md`。之后在对话里说「用 TradingAgents 的方式分析 NVDA」就会触发。
 
 不需要任何 Python 依赖，三个脚本都是标准库。
+
+`dolphin-research` 是独立的 skill 目录，链接到 skills 目录即可：
+
+```bash
+ln -s ~/.workbuddy-ai/skills/trading-agents-workflow/dolphin-research ~/.workbuddy-ai/skills/dolphin-research
+```
 
 ---
 

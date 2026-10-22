@@ -17,3 +17,6 @@ runs/
 # Local config
 .env
 .env.*
+
+# dolphin-research: original article full texts stay local
+dolphin-research/references/*/原文/
