@@ -1,5 +1,10 @@
 # trading-agents-workflow
 
+[![License: Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+[![Derived from TradingAgents](https://img.shields.io/badge/derived%20from-TauricResearch%2FTradingAgents-8a2be2.svg)](https://github.com/TauricResearch/TradingAgents)
+[![Python stdlib only](https://img.shields.io/badge/python-stdlib%20only-3776ab.svg)](scripts/)
+[![Skill](https://img.shields.io/badge/format-WorkBuddy%20%2F%20Claude%20Skill-2ea44f.svg)](SKILL.md)
+
 把 [TradingAgents](https://github.com/TauricResearch/TradingAgents) 的多智能体投研流程，改造成一份**可以直接给基金经理看**的投研报告。
 
 原版是一套研究框架：11 个角色各自输出，按图顺序拼成一份长文档，读者自己提炼。这里保留同样的图，但只交付一份合成报告——主轴是两句话：**市场现在在为什么付钱**，以及**我们的判断和最新卖方共识差在哪**。
